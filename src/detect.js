@@ -81,10 +81,6 @@ export function CamDetector() {
             const boxes = await obj[4].array();
             const classes = await obj[7].array();
             const scores = await obj[0].array();
-
-            console.log("Boxes: "+boxes);
-            console.log("Classes: "+classes);
-            console.log("Scores: "+scores);
             
         
           // Draw mesh
