@@ -1,11 +1,11 @@
 // Define our labelmap
 const labelMap = {
-    1:{name:'Fresh', color:'green'},
-    2:{name:'Fresh', color:'green'},
-    3:{name:'Unripe', color:'yellow'},
-    4:{name:'Ripe', color:'orange'},
-    5:{name:'Overripe', color:'gray'},
-    6:{name:'Rotten', color:'pink'},
+    1:{name:'Fresh-Unripe', color:'green'},
+    2:{name:'Fresh-Ripe', color:'yellow'},
+    3:{name:'Overripe', color:'orange'},
+    4:{name:'Unripe', color:'green'},
+    5:{name:'Ripe', color:'yellow'},
+    6:{name:'Rotten', color:'red'},
 }
 
 // Define a drawing function
@@ -25,7 +25,7 @@ export const drawRect = (boxes, classes, scores, threshold, imgWidth, imgHeight,
             // DRAW!!
             ctx.beginPath()
             ctx.fillText(labelMap[text]['name'] + ' - ' + Math.round(scores[i]*100)/100, x*imgWidth, y*imgHeight-10)
-            ctx.rect(x*imgWidth, y*imgHeight, width*imgWidth/2, height*imgHeight/2);
+            ctx.rect(x*imgWidth, y*imgHeight, width*(imgWidth*0.55), height*(imgHeight*0.55));
             ctx.stroke()
         }
     }
